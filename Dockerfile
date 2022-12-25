@@ -8,6 +8,7 @@ RUN pip install -r /app/requirements.txt
 
 # Copy application code
 COPY src /app
+COPY docker-run.sh /app/docker-run.sh
 
 # Set environment variables
 ENV IDENTIFIER ""
@@ -20,4 +21,4 @@ ENV GPX_KEY ""
 ENV GPX_METER_ID ""
 
 # Run the application
-CMD ["python", "/app/main.py --identifier $IDENTIFIER --api $API --api_key $API_KEY --participation_total $PARTICIPATION_TOTAL --participation_client $PARTICIPATION_CLIENT --start $START --gpx_key $GPX_KEY --gpx_meter_id $GPX_METER_ID"]
+CMD ["/app/docker-run.sh"]
