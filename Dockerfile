@@ -10,14 +10,14 @@ RUN pip install -r /app/requirements.txt
 COPY src /app
 
 # Set environment variables
-ENV IDENTIFIER <identifier>
-ENV API <api>
-ENV API_KEY <api_key>
-ENV PARTICIPATION_TOTAL <participation_total>
-ENV PARTICIPATION_CLIENT <participation_client>
-ENV START <start>
-ENV GPX_KEY <gpx_key>
-ENV GPX_METER_ID <gpx_meter_id>
+ENV IDENTIFIER ""
+ENV API ""
+ENV API_KEY ""
+ENV PARTICIPATION_TOTAL ""
+ENV PARTICIPATION_CLIENT ""
+ENV START ""
+ENV GPX_KEY ""
+ENV GPX_METER_ID ""
 
 # Run the application
-CMD ["python", "/app/main.py", "--identifier", "$IDENTIFIER", "--api", "$API", "--api_key", "$API_KEY", "--participation_total", "$PARTICIPATION_TOTAL", "--participation_client", "$PARTICIPATION_CLIENT", "--start", "$START", "--gpx_key", "$GPX_KEY", "--gpx_meter_id", "$GPX_METER_ID"]
+CMD ["python", "/app/main.py", "--identifier", "${IDENTIFIER}", "--api", "${API}", "--api_key", "${API_KEY}", "--participation_total", "${PARTICIPATION_TOTAL}", "--participation_client", "${PARTICIPATION_CLIENT}", "--start", "${START}", "--gpx_key", "${GPX_KEY}", "--gpx_meter_id", "${GPX_METER_ID}"]
